@@ -8,6 +8,7 @@ packages = [{include = "kursovay_5"}]
 
 [tool.poetry.dependencies]
 python = "^3.8"
+psycopg2 = "^2.9.7"
 
 
 [build-system]
