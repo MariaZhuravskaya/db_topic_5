@@ -169,6 +169,10 @@ class DBManager:
                 """
             )
 
+            result = self.cursor.fetchall()
+            return result
+
+
     def get_all_vacancies(self):
         """Получение списка всех вакансий с указанием названия компании, названия вакансии и зарплаты и ссылки на вакансию."""
 
@@ -179,6 +183,8 @@ class DBManager:
             INNER JOIN employers e USING(employer_id)
             """
         )
+        result = self.cursor.fetchall()
+        return result
 
     def get_avg_salary(self):
         """Получение средней зарплаты по вакансиям."""
@@ -189,6 +195,8 @@ class DBManager:
             FROM vacancies v
             """
         )
+        result = self.cursor.fetchall()
+        return result
 
     def get_vacancies_with_higher_salary(self):
         """Получение списка всех вакансий, у которых зарплата выше средней по всем вакансиям."""
@@ -201,6 +209,8 @@ class DBManager:
             ORDER BY v.salary_from
             """
         )
+        result = self.cursor.fetchall()
+        return result
 
     def get_vacancies_with_keyword(self, name: str):
         """Получение списка всех вакансий, в названии которых содержатся переданные в метод слова, например python."""
@@ -212,6 +222,8 @@ class DBManager:
             WHERE v.vacancy_name LIKE '%{name}%'
             """
         )
+        result = self.cursor.fetchall()
+        return result
 
 
 
