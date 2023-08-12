@@ -1,9 +1,7 @@
-
-
 from utils import DBManager
 
-def main():
 
+def main():
     v = DBManager()
     respons = v.get_hh_data()
     v.create_database('<имя БД>')
