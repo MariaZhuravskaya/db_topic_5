@@ -26,44 +26,44 @@
 
 ## Класс DBManager:
 
-import json
-from typing import Any
-from config import config
-import psycopg2
-from config import config
-import requests
+        import json
+        from typing import Any
+        from config import config
+        import psycopg2
+        from config import config
+        import requests
+        
+        class DBManager:
+                def __init__(self, db_name='postgres'):
+                self.cursor = None
+                self.conn = None
+                self.db_name = None
+                self.params = None
+                self.connect_db(db_name)
 
-class DBManager:
-        def __init__(self, db_name='postgres'):
-        self.cursor = None
-        self.conn = None
-        self.db_name = None
-        self.params = None
-        self.connect_db(db_name)
-
-    def connect_db(self, db_name: str) -> None:
-        """Метод для коннекта к БД"""
-
-    def get_hh_data(self):
-        """Получение данных о работодателях и их вакансиях по API_KEY."""
-
-    def create_database(self, db_name: str) -> None:
-        """Создание базы данных и таблиц для сохранения данных о работодателях и их вакансиях."""
-
-    def save_data_to_database(self, lst_all: list) -> None:
-        """Сохранение данных о работодателях и их вакансиях в БД."""
-
-    def get_companies_and_vacancies_count(self):
-            """Получение списка всех компаний и количество вакансий у каждой компании."""
-
-    def get_all_vacancies(self):
-        """Получение списка всех вакансий с указанием названия компании, названия вакансии и зарплаты и ссылки на вакансию."""
-
-    def get_avg_salary(self):
-        """Получение средней зарплаты по вакансиям."""
-
-    def get_vacancies_with_higher_salary(self):
-        """Получение списка всех вакансий, у которых зарплата выше средней по всем вакансиям."""
-
-    def get_vacancies_with_keyword(self, name: str):
-        """Получение списка всех вакансий, в названии которых содержатся переданные в метод слова, например python."""
+            def connect_db(self, db_name: str) -> None:
+                """Метод для коннекта к БД"""
+        
+            def get_hh_data(self):
+                """Получение данных о работодателях и их вакансиях по API_KEY."""
+        
+            def create_database(self, db_name: str) -> None:
+                """Создание базы данных и таблиц для сохранения данных о работодателях и их вакансиях."""
+        
+            def save_data_to_database(self, lst_all: list) -> None:
+                """Сохранение данных о работодателях и их вакансиях в БД."""
+        
+            def get_companies_and_vacancies_count(self):
+                    """Получение списка всех компаний и количество вакансий у каждой компании."""
+        
+            def get_all_vacancies(self):
+                """Получение списка всех вакансий с указанием названия компании, названия вакансии и зарплаты и ссылки на вакансию."""
+        
+            def get_avg_salary(self):
+                """Получение средней зарплаты по вакансиям."""
+        
+            def get_vacancies_with_higher_salary(self):
+                """Получение списка всех вакансий, у которых зарплата выше средней по всем вакансиям."""
+        
+            def get_vacancies_with_keyword(self, name: str):
+                """Получение списка всех вакансий, в названии которых содержатся переданные в метод слова, например python."""
